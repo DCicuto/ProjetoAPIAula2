@@ -38,5 +38,10 @@ namespace Controllers
         {
             return _carService.GetAll();
         }
+
+        public bool Update(Car car)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

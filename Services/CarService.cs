@@ -1,5 +1,4 @@
 ﻿
-
 using Models;
 using Repositories;
 
@@ -11,11 +10,11 @@ namespace Services
 
         public CarService()
         {
-            _repository = new CarRepository();
+            _repository = new();
         }
+
         public bool Insert(Car car)
         {
-            Console.WriteLine("Camada Service");
             return _repository.Insert(car);
         }
 
@@ -28,14 +27,20 @@ namespace Services
         {
             return _repository.Delete(id);
         }
+
+        public List<Car> GetAll()
+        {
+            return _repository.GetAll();
+        }
+
         public Car Get(int id)
         {
             return _repository.Get(id);
         }
 
-        public List<Car> GetAll()
+        public bool Update(int id)
         {
-            return _repository.GetAll();
+            throw new NotImplementedException();
         }
     }
 }
